@@ -8,8 +8,39 @@
 
 Cat.create!(
   birth_date: '2018/4/2',
-  color: 'white',
+  color: 'White',
   name: 'Tuna',
   sex: 'F',
   description: 'Tuna likes tuna'
+)
+
+Cat.create!(
+  birth_date: '2016/4/2',
+  color: 'Orange',
+  name: 'Garfield',
+  sex: 'F',
+  description: "Love's Lasagne"
+)
+
+Cat.create!(
+  birth_date: '2019/4/2',
+  color: 'Black',
+  name: 'Batman',
+  sex: 'M',
+  description: 'Coolest cat in the world'
+)
+
+Cat.create!(
+  birth_date: '2018/6/2',
+  color: 'Gray',
+  name: 'Shadow',
+  sex: 'F'
+)
+
+Cat.create!(
+  birth_date: '2020/4/2',
+  color: 'Purple',
+  name: 'Kitty',
+  sex: 'F',
+  description: 'Cutest cat in the world'
 )
