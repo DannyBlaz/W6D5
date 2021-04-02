@@ -1,0 +1,26 @@
+
+<% if action == :edit %>
+    <%action_url = cat_url(cat)%>
+<% else %>
+    <%action_url = cats_url%>
+<% end %>
+
+<form action="<%= action_url %>" method = "post">
+    <% if action == :edit %>
+        <input type="hidden" name="_method" value="patch" >
+    <% end %>
+    <label for="name">Name</label>
+    <input id="name" type="text" name="cat[name]" value="<%= cat.name%>">
+
+    <label for="birth_date">DOB</label>
+    <input id="birth_date" type="text" name="cat[birth_date]" value="<%= cat.birth_date%>">
+
+    <label for="color">Color</label>
+    <input id="color" type="text" color="cat[color]" value="<%= cat.color%>">
+
+    <label for="name">Name</label>
+    <input id="name" type="text" name="cat[name]" value="<%= cat.name%>">
+
+    <label for="name">Name</label>
+    <input id="name" type="text" name="cat[name]" value="<%= cat.name%>">
+</form>
