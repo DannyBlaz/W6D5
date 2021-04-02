@@ -11,10 +11,15 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
+
+require 'action_view'
+
 class Cat < ApplicationRecord
+    include ActionView::Helpers::DateHelper
 
     def age
-       :birth_date 
+        # 2021/4/2 - cat's bday = age
+       time_ago_in_words(birth_date)
     end
 
 end
