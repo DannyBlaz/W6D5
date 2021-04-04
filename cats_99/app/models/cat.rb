@@ -16,7 +16,7 @@ require 'action_view'
 
 class Cat < ApplicationRecord
     include ActionView::Helpers::DateHelper
-    
+
     COLORS = [
         "White",
         "Black",
@@ -28,14 +28,10 @@ class Cat < ApplicationRecord
     SEX = ["M", "F"]
 
     validates :birth_date, :name, :color, :sex, presence: true
-    validates :color, inclusion: { in: COLORS,
-    message: "Invalid Color" }
-
-    validates :sex, inclusion: { in: SEX,
-    message: "Invalid sex" }
+    validates :color, inclusion: COLORS
+    validates :sex, inclusion: SEX
 
     def age
-        # 2021/4/2 - cat's bday = age
        time_ago_in_words(birth_date)
     end
 

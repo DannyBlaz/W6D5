@@ -18,13 +18,32 @@
     <input id="birth_date" type="date" name="cat[birth_date]" value="<%= cat.birth_date%>"  max="2021-04-02">
 
     <label for="color">Color</label>
-    <input id="color" type="dropdown" color="cat[color]" value="<%= cat.COLOR%>">
+    <!-- <input id="color" type="dropdown" color="cat[color]" value="<%#= cat.COLOR%>"> -->
+    <select name="cat[color]" id="color">
+        <option disabled selected>--Select a color--</option>
+        <%Cat::COLORS.each do |color|%>
+            <option>
+            <%=color%>
+            </option>
+        <% end %>
+    </select>
 
-    <label for="sex">Sex</label>
-    <input id="sex" type="radio" name="cat[sex]" value="<%= cat.SEX%>">
+    <input 
+        id="sex" 
+        type="radio" 
+        name="cat[sex]" 
+        value="<%= cat.sex%>">
+    <label for="sex">Male</label>
+    <input 
+        id="sex" 
+        type="radio" 
+        name="cat[sex]" 
+        value="<%= cat.sex%>">
+    <label for="sex">Female</label>
 
-    <label for="description">Description</label>
     <input id="description" type="text" name="cat[description]" value="<%= cat.description%>">
+    <label for="description">Description</label>
 
+    <% submit_text = (cat.persisted? ? 'Update' : 'Create') + ' cat!' %>
     <input type="submit" value=" <%= submit_button %> ">
 </form>

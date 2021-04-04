@@ -7,12 +7,7 @@ class CatsController < ApplicationController
  
   def show
     @cat = Cat.find_by(id: params[:id])
-
-    if @cat
-      render :show
-    else
-      redirect_to cats_url
-    end
+    render :show
   end
 
   def new
@@ -45,15 +40,15 @@ class CatsController < ApplicationController
     end
   end 
 
-  def destroy
-    @cat = Cat.find_by(id: params[:id])
+  # def destroy
+  #   @cat = Cat.find_by(id: params[:id])
 
-    @cat.destroy
-    redirect_to cats_url
-  end
+  #   @cat.destroy
+  #   redirect_to cats_url
+  # end
 
   private
   def cat_params
-    params.require(:cat).permit(:birth_date, :color, :name, :sex, :description)
+    params.require(:cat).permit(:age, :birth_date, :color, :name, :sex, :description)
   end
 end
